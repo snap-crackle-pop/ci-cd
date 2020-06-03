@@ -10,6 +10,8 @@ before_deploy:
     - docker login -u $REGISTRY_USER -p $REGISTRY_PASS
 deploy:
     provider: heroku
+    api_key:
+        secure: RSbwN5fx5RJKQ8ege/mu85NEmQla/mpUIGUtVZ0/mZpS/Z8uYmaqO6ckhXBT3vfWbw72uhYV8QDa767/m+Nq8tKD7RN6RRCrRrwONg2rkd71PWPIAvp1hKiGx0J+rGV7MnY94KOcd3+oAEBHrXUM5X1R9ySUa0z6aDoixf5N6azvDlTXQmwZH6PqkQfYMXv3qPYtXU7N8y1ZOj/9CxFjgLv1j/d9R6uJ2L/BCy8ja0yLaxJa8c+sJz4oJ8COpBd5bz5yZwveJ4uk+2fOYGDbA65GQBoDJyb2aVfcck/GKGi6G9dzylBX33P/bb/Bc4kJElQs8YkAuzQ5ihva5H8kfyRJE3+nGrINTMyU32Llxclvimia0LNYcp1IVNH7mE6vREVgTy5TGWgIH9SXpHoPxd+qE5lmDsbAEUbB2vMNDpJ6UsuVeKx8UgAbfMV7lk1WzkDIAwv+fjmbYRP1BqKpbRLtifAwEdh/S8cjzVaWOWctyW1Pvdlw2aoVKX0+NkZ6FGCzKHGkHXOuuIPKMR2Z2gSqpzKgJfhXaL+lum7olj7eS4tzWr+4hzzjYfkxdsqnLkw78o+RJFsT979IVT3Fv+RZ+Pwnsdy2IJz8HodlLjO9m3Nl/MszqSM+hiIhlg9UT0j+u5pTtghBQDjDiKMGWxvpuicvekfuSt1ld1qxMhU=
     script: docker push snap-crackle-pop/ci-cd
     on:
         branch: master
