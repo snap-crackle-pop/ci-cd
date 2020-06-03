@@ -4,14 +4,14 @@ services:
 env:
     global:
         - REGISTRY_USER=yogeshkumar0
-        - secure: hcKaYW7OpMZ+1IPhk2vxJawtxonAe/FDKGGzESXFDaRNiUbkgqlbexSmYW86Gbsl05md549MXwNG8F95XJm89AzXKUUew/aQv02QDzJ/bt5TPlEcRcZhzwwBkVDVlxb3gaYcTfA4vQLojM1WY2BE/X7DJWcrx5oWH0m3yxaiD/9IOSn8owKkoy+ik1AGS39mFFNYGzyYGazQ/FE7IWAb5Xtcmw5+IVK8/B0QGoZmY893RFAgvyvvz0Sn6nWV7hq0APBmVjLgESsQpaohS72gOG/4BJE8Izc887CgQZYrLFm8ItT7tNjBBw6fxWOnknFEQzBtWIBamr0LTbBHI/vtkKvAIJOx6lF+hyTTEL6HBGrBl8HJ6GE2IPikfILGlLeW0CWXx/hpXywe9xJcC6sOmxVXfzfthGRHwzQB5jf2GBgsgaSPAqVn4X3Lfu7Nv8SQ0+9aK9uhKhQc26oSELRZ9EGbqVVRDqvRdIyzLRIJcpsMYNsOJ7OTOld3R2+z7sBRTJxF7RQSLVEmjXrynveaRo3N2ug8ovfrIy1efT9mXF/wniYJTz7IyLdmCEQYqOaZ7XETRw8D4Y2oxfiHEihA4wABcqeZut21LEC37Upe3lULzGm+PWTk2OMbeoJaKkSeDr4/pfjHN9w/getjEC38LE0Dcy/4Jq496jTWFxWpDFY=
+        - secure: JdrwqtcecRHbnwH7sunG4OgRs5O0sksrCuhV8b9Rqh2dpNPBcuwQn6JBkMG0jB+qLo9o2ONXPgb9CFbttDQuauCzqF1E3mOYPXIcqNpIHbCm7XRUI5mH6p2XrysAe58orhAMDm6bKUnVqTfh9qvCSjWEJjAqS6G8BGgkIJupROGof7sFA0SFZzh/43S7QUnSVXWf7lblRCsMHGGrp8WZS9F464G5Ut1NTKgHhn7xzArdJSTbZgRLXsV5K4Xl84sfo/r3ve6j+XII9jGjHbPB3vcR8j92+NPeJzvxhEkH9cAyfwLAw0cbIaVV8k+PuA8tbah8ftfAi/EEhJ7ZCXM4oMw9K44mf2fuFcsUjzKJE1hBnY2PkddqSsQIB3w/bGFhGKjG2o0e4uRBzI3roMKcgiYNF2UhB0TSqjz/iA1tnmzA4yB0R6QANKUnFlxsX+vawm88OdgCfJsAYoIQCjcVhfevzM6qxjgSLvVLaa30WZRN2ZdtqpoYigBn/gazo1hh+NnUIkS6u3bTJIcj1rxU/1h138/C7bi/VtTac6Zn7FKNWLTBoeEK2b7HaUq0H8+sS6nHPOFEbxQl06qTJrnS5smOjDmLEmbi3dFQ1biHUeNqzcpe65g2bnBvbfgf6d1k7A+UBbeVgmi8Fgypu0F6+H2h4ebY/9ZrQPuyjgR8Krg=
 script:
     - docker build --tag snap-crackle-pop/ci-cd .
     - docker run -d snap-crackle-pop/ci-cd
 after_script:
     - docker images
 before_deploy:
-    - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
+    - docker login -u $REGISTRY_USER -p $REGISTRY_PASS
 deploy:
     provider: script
     script: docker push snap-crackle-pop/ci-cd
