@@ -8,7 +8,7 @@ env:
         - secret: s+VSDwF9TQi9VYeayIB9+lOi42DMheJpd+sDKLEVfV/i/aHHDAqd4jRFHx+gSHUsVOT0W7RcilAnSWSyJOljjVmusSYUB+wAJLOl8qfNQWImsWtP1jmPXai2R8NCPPvM69vTWzOJki6W0YEYrThm+WxE1FFf5RBOluZKX5JzwkAUKlux9/0todVqcxzvicAeiqA899c4z2HeQM3niYqBLPh7gpr/lzwH+7CpULxsRxyAJu5TvUCVu9VaGJtc+g2vCgPpy8tQCh6zdBgettgSJeSmfreHVKs3Xyof+sUhdF2CDvnBvkbPRvUXNNFaPfQ/bQVPkI9WL6IPhagyxCAtEVcttYNEVMW1gAPjIB9J0LD9uwGXqxiirAJy678jI+cMugCxj5IYyaDX7G8ocnMrjcta6GKoOagtivbRlzFUGiIEgBU2XVAo39qPi2si31DWECJagMlxvLypDzvLZostUebb0w8qVeVxHLPfWbSHmN6vQvNAXzHvuHwKBpqpWUeyZ4jJ3dyaftEMb6NOh7DOk8nr64GOQKN8TdxZuqMSFMQepmLuZi/efdbgoUa2d4XNqqU+KVWvtirsP0OSW0esDeA7n8FYpbz929ju5WrT9naV44IpYwzMeDzIJg+97HhkLYMqPbjCON0NkXf/REV7fCAZf6kEHMKP4vinUz3nxEA=
 script:
     - docker build --tag snap-crackle-pop/ci-cd .
-    - docker run snap-crackle-pop/ci-cd -d
+    - docker run -d snap-crackle-pop/ci-cd
 after_script:
     - docker images
 before_deploy:
