@@ -4,7 +4,6 @@ services:
 env:
     global:
         - REGISTRY_USER=yogeshkumar0
-    REGISTRY_PASS:
         - secure: hcKaYW7OpMZ+1IPhk2vxJawtxonAe/FDKGGzESXFDaRNiUbkgqlbexSmYW86Gbsl05md549MXwNG8F95XJm89AzXKUUew/aQv02QDzJ/bt5TPlEcRcZhzwwBkVDVlxb3gaYcTfA4vQLojM1WY2BE/X7DJWcrx5oWH0m3yxaiD/9IOSn8owKkoy+ik1AGS39mFFNYGzyYGazQ/FE7IWAb5Xtcmw5+IVK8/B0QGoZmY893RFAgvyvvz0Sn6nWV7hq0APBmVjLgESsQpaohS72gOG/4BJE8Izc887CgQZYrLFm8ItT7tNjBBw6fxWOnknFEQzBtWIBamr0LTbBHI/vtkKvAIJOx6lF+hyTTEL6HBGrBl8HJ6GE2IPikfILGlLeW0CWXx/hpXywe9xJcC6sOmxVXfzfthGRHwzQB5jf2GBgsgaSPAqVn4X3Lfu7Nv8SQ0+9aK9uhKhQc26oSELRZ9EGbqVVRDqvRdIyzLRIJcpsMYNsOJ7OTOld3R2+z7sBRTJxF7RQSLVEmjXrynveaRo3N2ug8ovfrIy1efT9mXF/wniYJTz7IyLdmCEQYqOaZ7XETRw8D4Y2oxfiHEihA4wABcqeZut21LEC37Upe3lULzGm+PWTk2OMbeoJaKkSeDr4/pfjHN9w/getjEC38LE0Dcy/4Jq496jTWFxWpDFY=
 script:
     - docker build --tag snap-crackle-pop/ci-cd .
