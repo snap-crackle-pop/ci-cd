@@ -5,6 +5,8 @@ script:
     - docker build --tag snap-crackle-pop/ci-cd .
     - docker run -d snap-crackle-pop/ci-cd
     - docker images
+    - docker tag snap-crackle-pop/ci-cd snap-crackle-pop/ci-cd:0.0.1
+    - docker push snap-crackle-pop/ci-cd
 after_script:
 after_script:
     - docker images
