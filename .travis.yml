@@ -2,12 +2,12 @@ sudo: required
 services:
     - docker
 script:
-    - docker build --tag snap-crackle-pop/ci-cd .
-    - docker run -d snap-crackle-pop/ci-cd
+    - docker build --tag yogeshkumar0/ci-cd .
+    - docker run -d yogeshkumar0/ci-cd
     - docker images
     - docker login -u $REGISTRY_USER -p $REGISTRY_PASS
-    - docker tag snap-crackle-pop/ci-cd snap-crackle-pop/ci-cd:0.0.1
-    - docker push snap-crackle-pop/ci-cd
+    - docker tag yogeshkumar0/ci-cd yogeshkumar0/ci-cd:0.0.1
+    - docker push yogeshkumar0/ci-cd
 after_script:
     - docker images
 # before_deploy:
@@ -16,6 +16,6 @@ deploy:
     provider: heroku
     api_key:
         secure: b2SDRUfrVcG0418LFPPCHD95xEo94pCFEsRQExK1F6ANy3WRr4EXCymVwx+8sna9RHfGDyYV2OHCk561y8mKl+sKQTlG3Eo0tjs9ttqzfxRIQNz7a017h8WbLjrqV1zxstRFTlQhYxTtJSJgmAhiOKFwNMMcNq4H/5zdOmErDkMHi6dzqh+g7O6+MCO+Px6BrN5wVTnigUUUzmTEuZK9e+5gFDH8+LgqHZwPktUnHmhD+zfpSmjYxuKjnAHX7euedZeFbAIEQh5aC3XindmL4pzCZYlScoXfYpAuVkEzMYYlMAsfvsKC4JIP0hNDRKPFBQqwnpZyUq36iiAhpj1GYET+MuXCEPoCngRxd7Pvf0DTWpQfXfvdYT3yxeIFCtDCzhIlwMojoRWDq5QZATGXtci2HQ9LL6h1NN9XxgsCrHK3IPrikQu204OIKvmY/e6uFCWYL36Blw6wkuB30i7Nn3V0cZ139n6uKTGiFMPFxNQHTHcNy8jaRZIiNpIgZhNcJzaK1wzj6zybPugs58RHsaTOfWiIk+YjPufnIIw0HQLcd3k/x77ioptKqZpfdFjLVkVT80s79h3EuPZ/DWGzzEhmPCG6Bbr5r++KEQfQ5ItmNTGt+SEL7xvjaUzB49Uy7koQtmFc+8b3rbwnu63XnQoJwQwq7aXbuB7qhgeNtJs=
-    script: docker push snap-crackle-pop/ci-cd
+    script: docker push yogeshkumar0/ci-cd
     on:
         branch: master
