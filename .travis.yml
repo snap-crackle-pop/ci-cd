@@ -10,12 +10,9 @@ script:
     - docker push yogeshkumar0/ci-cd
 after_script:
     - docker images
-# before_deploy:
-#     - docker login -u $REGISTRY_USER -p $REGISTRY_PASS
 deploy:
     provider: heroku
     api_key:
-        secure: b2SDRUfrVcG0418LFPPCHD95xEo94pCFEsRQExK1F6ANy3WRr4EXCymVwx+8sna9RHfGDyYV2OHCk561y8mKl+sKQTlG3Eo0tjs9ttqzfxRIQNz7a017h8WbLjrqV1zxstRFTlQhYxTtJSJgmAhiOKFwNMMcNq4H/5zdOmErDkMHi6dzqh+g7O6+MCO+Px6BrN5wVTnigUUUzmTEuZK9e+5gFDH8+LgqHZwPktUnHmhD+zfpSmjYxuKjnAHX7euedZeFbAIEQh5aC3XindmL4pzCZYlScoXfYpAuVkEzMYYlMAsfvsKC4JIP0hNDRKPFBQqwnpZyUq36iiAhpj1GYET+MuXCEPoCngRxd7Pvf0DTWpQfXfvdYT3yxeIFCtDCzhIlwMojoRWDq5QZATGXtci2HQ9LL6h1NN9XxgsCrHK3IPrikQu204OIKvmY/e6uFCWYL36Blw6wkuB30i7Nn3V0cZ139n6uKTGiFMPFxNQHTHcNy8jaRZIiNpIgZhNcJzaK1wzj6zybPugs58RHsaTOfWiIk+YjPufnIIw0HQLcd3k/x77ioptKqZpfdFjLVkVT80s79h3EuPZ/DWGzzEhmPCG6Bbr5r++KEQfQ5ItmNTGt+SEL7xvjaUzB49Uy7koQtmFc+8b3rbwnu63XnQoJwQwq7aXbuB7qhgeNtJs=
-    # script: docker push yogeshkumar0/ci-cd
+        secure: juYD2zcihRAuKU2BztFheJXiKpO6WGDeS8Pd/cAzuH8VIBH0kDCkTa+wv2akFMPbaz91AZcUrurkQalRZVVUe16lzyXb3Y2yBMd3e+PtF2xlZnL9Ze8OVjshR3/UHVpudESy3RiLMicefsK0UFp15PVdCaDupyl+K4OWDFxVBbfUYunj38mjiPrsm/gFQni9mv94z3c8VndavEi+X8ftv7eCfeaCJH3TNUZbdbhpR7OR6S3yc4dRTCTwaoNJhW0BjsgkL/Yo03LP8fKsVlaIYiKy6bCxgqooNcG5V/Q++7v2mCITaXIROCFlvQNHrYcW/xX1DgvJStiQ3s03n9m1bLa3znNXVQkN9ZmNYxy5cqQle1wIhVoeTZdwKXRVSjhSyY5RFm4wMoAf8Msz9Z/kCyRjP+xwV8tTzMkld+0kvJ2fzNBiQhDjD/T0CJ3ImD9bptxcjhLqxVI2YrfbVUgo6M7RkdsHLmRR/Eo1uHFaAzwf9ubGZ35OkItHQqfjsPaPmUzbb/Sjrfy6EAFdKSKtFA2nzASlGOJP67qPUGQKILHV+wl1WKf0IMAkJtJu4lZVj2xy4a+x0ukqbaVdsFkkW418g0+XMgFZiVw82xQvpmwafgRnXxHWM6lRPXSA6lKphAy5JKRYBGP88KgdDBmsV7N67lnk+OMXnb8t5otr5zc=
     on:
         branch: master
