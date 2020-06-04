@@ -4,6 +4,8 @@ services:
 script:
     - docker build --tag snap-crackle-pop/ci-cd .
     - docker run -d snap-crackle-pop/ci-cd
+    - docker images
+after_script:
 after_script:
     - docker images
 before_deploy:
