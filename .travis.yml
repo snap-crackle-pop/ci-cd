@@ -6,7 +6,7 @@ script:
     - docker run -d yogeshkumar0/ci-cd
     - docker images
     - docker login -u $REGISTRY_USER -p $REGISTRY_PASS
-    - docker tag yogeshkumar0/ci-cd yogeshkumar0/ci-cd:0.0.1
+    - docker tag yogeshkumar0/ci-cd yogeshkumar0/ci-cd:0.0.$TRAVIS_BUILD_NUMBER
     - docker push yogeshkumar0/ci-cd
 after_script:
     - docker images
