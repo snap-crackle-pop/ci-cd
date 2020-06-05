@@ -10,6 +10,7 @@ script:
     - docker push yogeshkumar0/ci-cd
 after_script:
     - docker images
+  # 1
 deploy:
     provider: heroku
     app: cd-cd
