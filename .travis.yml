@@ -12,7 +12,10 @@ after_script:
     - docker images
 deploy:
     provider: heroku
-    on:
-        branch: master
+    app: cd-cd
+  on:
+    repo: snap-crackle-pop/ci-cd
+    # on:
+    #     branch: master
     api_key:
         secure: Ad1pxroKA0jDRjkyuBIdlbI2pNA7T82IhY/wDd3REL2U0J369moCFW0sUB8DQofGLWuOM0UQ2uO5lqRfm2XPCUu0Lsrke2u3emU8+/0iBCfjdBlns3sar/RaNUAVmtGzThm7G0VQjEgjHHeZoOPeyCSePcKNJwnUDfkGpZts4qCzx4fO+XXp7TwMjTEe6PuOPdEsHFLoGJ37EawwyjmXwe7cbIXHIFhquBs0XY9z7YAzcdOA+D0J/dBJTTSjaTS2QOifwdJRhu70AjFdn9E8Ivn4BBy5ada6RwzMTqkzlLvQbrTedHSjSCV/k+Y+p4tMlwrtxitu2BhjBs15r9Wd5/UmuWo+7Dkk53rdCoZotYgyDZWC1i5jetoxtZR+D0NyY1rkFhBA0NzK7wJ5cijjZXb8DOkdjFBvPJX9VxSAVEOFtzgDWh8z/MpdLOKSyjv/sDRP6vDDZ0e+WSbNCbZblE1+3DASR3dawBMhHlOhPdIEfTGCKuzblTwOEtY88lx0qh3nGjrnRKu83GpgsPc6seQlNilsSxc2guECcp1asHYG67x3bwOqulShM5dvcgSXKoSu3EasTwPA6mVjkLh0szbFRLEIhF9Cv/WfqwwYvEhpKU4Bi9zxKmBIECyKf9d8YNJvyzeh0V9ROX4TuGoTcJqL6A2izk+8en9GE/mbVWM=
