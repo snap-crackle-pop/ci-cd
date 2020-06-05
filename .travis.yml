@@ -1,18 +1,19 @@
 sudo: required
 services:
-- docker
+    - docker
 script:
-- docker build --tag yogeshkumar0/ci-cd .
-- docker run -d yogeshkumar0/ci-cd
-- docker images
-- docker login -u $REGISTRY_USER -p $REGISTRY_PASS
-- docker tag yogeshkumar0/ci-cd yogeshkumar0/ci-cd:0.0.1
-- docker push yogeshkumar0/ci-cd
+    - docker build --tag yogeshkumar0/ci-cd .
+    - docker run -d yogeshkumar0/ci-cd
+    - docker images
+    - docker login -u $REGISTRY_USER -p $REGISTRY_PASS
+    - docker tag yogeshkumar0/ci-cd yogeshkumar0/ci-cd:0.0.1
+    - docker push yogeshkumar0/ci-cd
 after_script:
-- docker images
+    - docker images
+# 1
 deploy:
-  provider: heroku
-  on:
-    branch: master
-  api_key:
-    secure: kKS6gu8xSF2G+XeHyaiTEN9yqXgbL90PMzLvKVH9xHo0no/2J2BKOW1ZonNCI9wCBJAP19K5ijupgiwHWavVCwgE67oSk77uAWBr4BBTtaadpM8oI1rZ5TCqmE+VaWZjox824gxqKzKAWLU0EJFOWXRtJqbXCZ9TF+oRC35yc2ItbZ/QSXv+g1dN1sIGwrIf/9s4XRuHc/ETJJBS9Qgn+co+G8VGp7bu1HDA2SLv4ZFjgiwnbUWtuoUZmbpD+6/mtBzRgbBlwzkte3sEmaSaX6V14u9nW24hAsWrgePwjdeEebzM3BUjNzeV56hL2VJDgfROfMLjxh2XdYbGi58cjRa6B5zTi1jmCE1zVWkfVfp3RRllv/y8pdTTTlBPCSp8VhVkTyjIKnRHr26DCQPibq2iKj3F+5E7h6V4W1tNvoGa8jq8cd9Nhnbv8C80P9hrllMVSF8MhyJ0qRHfElREYEx8Jkec05bUR59PFNc8Z4zU9LQm4kjJPGEd9CB2PoOdgOKNUSAdrLvbZihQMOX/FFl8MxWkJi5Zm9F/MYTQhSmO3DP/5hh8hK5xEl2vmLDGoN9eLQhSQt1+8glLYh7RzEnG7ZHiGyhAUk4SsluWPBi4f07YgGWfddyfaRj3XuIPWuI52TM+MmNc6F5N7mk/tuPO0QXT5SMBVHOtnvZtdoo=
+    provider: heroku
+    on:
+        branch: master
+    api_key:
+        secure: kKS6gu8xSF2G+XeHyaiTEN9yqXgbL90PMzLvKVH9xHo0no/2J2BKOW1ZonNCI9wCBJAP19K5ijupgiwHWavVCwgE67oSk77uAWBr4BBTtaadpM8oI1rZ5TCqmE+VaWZjox824gxqKzKAWLU0EJFOWXRtJqbXCZ9TF+oRC35yc2ItbZ/QSXv+g1dN1sIGwrIf/9s4XRuHc/ETJJBS9Qgn+co+G8VGp7bu1HDA2SLv4ZFjgiwnbUWtuoUZmbpD+6/mtBzRgbBlwzkte3sEmaSaX6V14u9nW24hAsWrgePwjdeEebzM3BUjNzeV56hL2VJDgfROfMLjxh2XdYbGi58cjRa6B5zTi1jmCE1zVWkfVfp3RRllv/y8pdTTTlBPCSp8VhVkTyjIKnRHr26DCQPibq2iKj3F+5E7h6V4W1tNvoGa8jq8cd9Nhnbv8C80P9hrllMVSF8MhyJ0qRHfElREYEx8Jkec05bUR59PFNc8Z4zU9LQm4kjJPGEd9CB2PoOdgOKNUSAdrLvbZihQMOX/FFl8MxWkJi5Zm9F/MYTQhSmO3DP/5hh8hK5xEl2vmLDGoN9eLQhSQt1+8glLYh7RzEnG7ZHiGyhAUk4SsluWPBi4f07YgGWfddyfaRj3XuIPWuI52TM+MmNc6F5N7mk/tuPO0QXT5SMBVHOtnvZtdoo=
